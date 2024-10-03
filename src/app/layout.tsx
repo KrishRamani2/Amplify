@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { NavbarDemo } from "./components/Navbar";
+import { HeroScrollDemo } from "./components/Container_Scroll";
+import { AnimatedPinDemo } from "./components/Card";
+import { HeroParallaxDemo } from "./components/Homecover";
+import { TypewriterEffectSmooth } from "./components/ui/typewriter-effect";
+import { TypewriterEffectSmoothDemo } from "./components/Popular_Artist_Text";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,9 +31,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NavbarDemo />
+        <HeroScrollDemo />
+        <HeroParallaxDemo />
+        <TypewriterEffectSmoothDemo />
+        <AnimatedPinDemo />
         {children}
       </body>
     </html>

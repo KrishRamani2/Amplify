@@ -1,4 +1,11 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+      domains: ['aceternity.com'], // Add your domain here
+    },
+  };
+  
 
+  
 export default nextConfig;
