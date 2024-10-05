@@ -2,7 +2,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-      domains: ['aceternity.com'], // Add your domain here
+      domains: ['aceternity.com','assets.aceternity.com'], // Add your domain here
     },
   };
   

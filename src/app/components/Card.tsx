@@ -22,6 +22,12 @@ export function AnimatedPinDemo() {
       description: "More customizable components for your projects.",
       header: "More UI",
     },
+    {
+      title: "/more-examples.com",
+      href: "https://example.com",
+      description: "More customizable components for your projects.",
+      header: "More UI",
+    },
     // Add more card data as needed
   ];
 

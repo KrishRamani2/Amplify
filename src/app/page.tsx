@@ -1,10 +1,22 @@
+"use client";
 import Image from "next/image";
+import { HeroScrollDemo } from "./components/Container_Scroll";
+import { HeroParallaxDemo } from "./components/Homecover";
+import { TypewriterEffectSmoothDemo } from "./components/Popular_Artist_Text";
+import { AnimatedPinDemo } from "./components/Card";
+import { NavbarDemo } from "./components/Navbar";
+import Footer from "./components/Footer";
 
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      
+    <div >
+      <NavbarDemo />
+        <HeroScrollDemo/>
+        <HeroParallaxDemo/>
+        <TypewriterEffectSmoothDemo />
+        <AnimatedPinDemo />
+        <Footer />
     </div>
   );
 }

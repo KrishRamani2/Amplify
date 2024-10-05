@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "../../utils/cn";
-
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 export function NavbarDemo() {
   return (
     <div className="relative w-full flex items-center justify-center">
@@ -18,22 +19,20 @@ function Navbar({ className }: { className?: string }) {
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
+        <MenuItem setActive={setActive} active={active} item="Account">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
+            <HoveredLink href="/web-dev">Login</HoveredLink>
+            <HoveredLink href="/interface-design">View Profile</HoveredLink>
+            <HoveredLink href="/seo">Listening history</HoveredLink>
+            <HoveredLink href="/branding">Settings and privacy</HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-          </div>
-        </MenuItem>
+        <Link href="/home"><MenuItem  item="Home"></MenuItem></Link>
+        <MenuItem  item="Premium"></MenuItem>
+        <MenuItem  item="Library"></MenuItem>
+        <MenuItem  item="Search"></MenuItem>
+        <Link href="/aboutus"><MenuItem  item="About Us"></MenuItem></Link>
+        
       </Menu>
     </div>
   );
