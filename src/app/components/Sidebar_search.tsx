@@ -12,9 +12,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "../../utils/cn";
-import DashboardHome from "./Dashboard";
 
-export function SidebarDemo() {
+import Serach_Content from "./Serach_Content";
+
+export function SidebarSearch() {
   const links = [
     {
       label: "Dashboard",
@@ -149,6 +150,6 @@ export const LogoIcon = () => {
 // Dummy dashboard component with content
 const Dashboard = () => {
   return (
-   <DashboardHome />
+   <Serach_Content />
   );
 };

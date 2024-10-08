@@ -1,30 +1,32 @@
 "use client";
+
 import React from "react";
 import { PinContainer } from "./ui/3d-pin";
-
+import Image from "next/image";
+import Arijit from "../images/Arijjit-Singh-Concert.jpeg"
 export function AnimatedPinDemo() {
   const cardData = [
     {
-      title: "/ui.aceternity.com",
-      href: "https://twitter.com/mannupaaji",
+      title: "Arijit Singh",
+      href: Arijit,
       description: "Customizable Tailwind CSS and Framer Motion Components.",
       header: "Aceternity UI",
     },
     {
       title: "/another-example.com",
-      href: "https://example.com",
+      href: Arijit,
       description: "Another customizable component library.",
       header: "Example UI",
     },
     {
       title: "/more-examples.com",
-      href: "https://example.com",
+      href: Arijit,
       description: "More customizable components for your projects.",
       header: "More UI",
     },
     {
       title: "/more-examples.com",
-      href: "https://example.com",
+      href: Arijit,
       description: "More customizable components for your projects.",
       header: "More UI",
     },
@@ -43,7 +45,15 @@ export function AnimatedPinDemo() {
               <div className="text-base !m-0 !p-0 font-normal">
                 <span className="text-slate-500">{card.description}</span>
               </div>
-              <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" />
+              <div className="flex-1 w-full mt-4 relative overflow-hidden rounded-lg">
+                <Image
+                  src={card.href}
+                  alt={card.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="absolute inset-0"
+                />
+              </div>
             </div>
           </PinContainer>
         ))}

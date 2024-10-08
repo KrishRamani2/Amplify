@@ -13,8 +13,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "../../utils/cn";
 import DashboardHome from "./Dashboard";
+import Premium from "../premium/page";
+import Premium_Content from "./Premium_Content";
+import Library_content from "./library_content";
 
-export function SidebarDemo() {
+export function SidebarLibrary() {
   const links = [
     {
       label: "Dashboard",
@@ -149,6 +152,6 @@ export const LogoIcon = () => {
 // Dummy dashboard component with content
 const Dashboard = () => {
   return (
-   <DashboardHome />
+   <Library_content />
   );
 };

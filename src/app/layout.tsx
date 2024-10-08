@@ -2,14 +2,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { NavbarDemo } from "./components/Navbar";
-import { HeroScrollDemo } from "./components/Container_Scroll";
-import { AnimatedPinDemo } from "./components/Card";
-import { HeroParallaxDemo } from "./components/Homecover";
-import { TypewriterEffectSmooth } from "./components/ui/typewriter-effect";
-import { TypewriterEffectSmoothDemo } from "./components/Popular_Artist_Text";
-import { MacbookScrollDemo } from "./components/Macbook";
-import Footer from "./components/Footer";
+import { SidebarDemo } from "./components/Sidebar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

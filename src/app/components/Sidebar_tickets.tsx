@@ -12,9 +12,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "../../utils/cn";
-import DashboardHome from "./Dashboard";
+import Book_ticket_Content from "./Book_ticket_Content";
 
-export function SidebarDemo() {
+export function SidebarTickets() {
   const links = [
     {
       label: "Dashboard",
@@ -149,6 +149,6 @@ export const LogoIcon = () => {
 // Dummy dashboard component with content
 const Dashboard = () => {
   return (
-   <DashboardHome />
+   <Book_ticket_Content />
   );
 };

@@ -28,11 +28,10 @@ function Navbar({ className }: { className?: string }) {
           </div>
         </MenuItem>
         <Link href="/home"><MenuItem  item="Home"></MenuItem></Link>
-        <MenuItem  item="Premium"></MenuItem>
-        <MenuItem  item="Library"></MenuItem>
-        <MenuItem  item="Search"></MenuItem>
+        <Link href="/premium"><MenuItem item="Premium"> </MenuItem></Link>
+        <Link href="/library"><MenuItem  item="Library"></MenuItem></Link>
+        <Link href="/search"><MenuItem  item="Search"></MenuItem></Link>
         <Link href="/aboutus"><MenuItem  item="About Us"></MenuItem></Link>
-        
       </Menu>
     </div>
   );
