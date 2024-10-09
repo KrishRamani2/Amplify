@@ -1,8 +1,18 @@
 import React from 'react'
+import { BackgroundBeamsWithCollisionDemo } from './Premium_Banner'
+import PremiumPlans from './Premium_Card'
+import { CompareDemo } from './Compare'
 
 const Premium_Content = () => {
   return (
-    <div>Premium_Content</div>
+    <div className="flex flex-col">
+      <div className="w-full">
+        <BackgroundBeamsWithCollisionDemo />
+      </div>
+      <div className="w-full mt-4">
+        <PremiumPlans/>
+      </div>
+    </div>
   )
 }
 

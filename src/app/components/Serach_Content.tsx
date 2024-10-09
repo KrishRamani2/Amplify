@@ -1,8 +1,12 @@
 import React from 'react'
+import { PlaceholdersAndVanishInputDemo } from './Searchbar'
+
 
 const Serach_Content = () => {
   return (
-    <div>Serach_Content</div>
+    <>
+    <PlaceholdersAndVanishInputDemo />
+    </>
   )
 }
 
