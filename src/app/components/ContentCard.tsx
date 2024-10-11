@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { cn } from "../../utils/cn";
 import Image from "next/image";
 
-const API_KEY = "YOUR_LASTFM_API_KEY"; // Replace with your Last.fm API key
+const API_KEY = process.env.NEXT_PUBLIC_LASTFM_API_KEY;
 
-export function MusicCardDemo() {
+export function CardDemo() {
   const [artistData, setArtistData] = useState(null);
 
   useEffect(() => {
@@ -70,3 +70,5 @@ export function MusicCardDemo() {
     </div>
   );
 }
+
+export default CardDemo;
