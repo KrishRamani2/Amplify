@@ -1,8 +1,11 @@
 import React from 'react'
+import LibraryHeader from './LinraryHeader'
 
 const Library_content = () => {
   return (
-    <div>L</div>
+    <>
+    <LibraryHeader /> 
+    </>
   )
 }
 

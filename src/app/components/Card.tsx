@@ -10,7 +10,7 @@ export function AnimatedPinDemo() {
       title: "Arijit Singh",
       href: Arijit,
       description: "Customizable Tailwind CSS and Framer Motion Components.",
-      header: "Aceternity UI",
+      header: "UI",
     },
     {
       title: "/another-example.com",
