@@ -1,8 +1,9 @@
 import React from 'react'
+import { TimelineDemo } from './MusicHistory'
 
 const History_content = () => {
   return (
-    <div>history_content</div>
+    <TimelineDemo />
   )
 }
 

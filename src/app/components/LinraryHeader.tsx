@@ -1,6 +1,7 @@
 import React from 'react';
 import { Plus, Search } from 'lucide-react';
 import { ExpandableCardDemo } from './librarycard';
+import Link from 'next/link';
 
 const LibraryHeader = () => {
   return (
@@ -13,9 +14,9 @@ const LibraryHeader = () => {
         <button className="p-2 hover:bg-gray-200 rounded-full">
           <Plus size={20} />
         </button>
-        <button className="p-2 hover:bg-gray-200 rounded-full">
+        <Link href="/search"><button className="p-2 hover:bg-gray-200 rounded-full">
           <Search size={20} />
-        </button>
+        </button></Link>
       </div>
      
      </div>

@@ -1,8 +1,9 @@
 import React from 'react'
+import SettingsPage from './settingspage'
 
 const Settings_content = () => {
   return (
-    <div>Settings_content</div>
+    <SettingsPage />
   )
 }
 

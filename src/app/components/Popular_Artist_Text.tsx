@@ -13,7 +13,7 @@ export function TypewriterEffectSmoothDemo() {
     },
     
     {
-      text: "Amplify.",
+      text: "Smashify.",
       className: "text-blue-500 dark:text-blue-500",
     },
   ];
