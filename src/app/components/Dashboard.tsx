@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardDemo } from './ContentCard';
+import CardDemo from './ContentCard';
 
 const DashboardHome = () => {
   return (

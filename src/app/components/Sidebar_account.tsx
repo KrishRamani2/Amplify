@@ -2,17 +2,13 @@
 import React, { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/sidebar";
 import {
-  IconArrowLeft,
-  IconBrandTabler,
-  IconSettings,
-  IconUserBolt,
+  IconArrowLeft,IconSettings 
 } from "@tabler/icons-react";
 import { Tickets,Crown,Library,History,LayoutDashboard,Search } from 'lucide-react';
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "../../utils/cn";
-import DashboardHome from "./Dashboard";
 import Account_content from "./Account_content";
 
 

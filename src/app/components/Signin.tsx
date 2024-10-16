@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 "use client";
 import React from "react";
 import { Label } from "./ui/label";
@@ -33,7 +34,7 @@ export function SigninFormDemo() {
           <Label htmlFor="password">Password</Label>
           <Input id="password" placeholder="••••••••" type="password" />
         </LabelInputContainer>
-        <LabelInputContainer className="mb-8">
+        <LabelInputContainer className="mb-8" children={undefined}>
           
         </LabelInputContainer>
 

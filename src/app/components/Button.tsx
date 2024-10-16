@@ -2,13 +2,9 @@
 import React from "react";
 import {
   Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
   ModalTrigger,
 } from "./ui/animated-modal";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export function ButtonDemo() {

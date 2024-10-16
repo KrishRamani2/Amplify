@@ -1,14 +1,19 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Image1 from "../images/musicD.jpeg"
 import Image2 from "../images/rc.jpeg"
 import Image3 from "../images/analytics.webp"
 import Image4 from "../images/market.jpeg"
 import Image5 from "../images/artistic.jpeg"
-const services = [
+interface Service {
+  title: string;
+  description: string;
+  icon: string;
+  image: typeof Image1; // Assuming all images are of the same type
+}
+const services: Service[] = [
   {
     title: "Music Distribution",
     description: "Get your music on all major streaming platforms worldwide.",
@@ -41,7 +46,7 @@ const services = [
   }
 ];
 
-const ServiceCard = ({ service }) => (
+const ServiceCard: React.FC<{ service: Service }> = ({ service }) => (
   <CardContainer className="inter-var">
     <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[24rem] h-auto rounded-xl p-6 border">
       <CardItem

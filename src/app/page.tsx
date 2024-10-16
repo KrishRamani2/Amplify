@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { HeroScrollDemo } from "./components/Container_Scroll";
 import { HeroParallaxDemo } from "./components/Homecover";
 import { TypewriterEffectSmoothDemo } from "./components/Popular_Artist_Text";

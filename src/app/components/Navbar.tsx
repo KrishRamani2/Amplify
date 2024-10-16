@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
+import { HoveredLink, Menu, MenuItem} from "./ui/navbar-menu";
 import { cn } from "../../utils/cn";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+
 export function NavbarDemo() {
   return (
     <div className="relative w-full flex items-center justify-center">
@@ -27,11 +27,11 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/branding">Settings and privacy</HoveredLink>
           </div>
         </MenuItem>
-        <Link href="/home"><MenuItem  item="Home"></MenuItem></Link>
-        <Link href="/premium"><MenuItem item="Premium"> </MenuItem></Link>
-        <Link href="/library"><MenuItem  item="Library"></MenuItem></Link>
-        <Link href="/search"><MenuItem  item="Search"></MenuItem></Link>
-        <Link href="/aboutus"><MenuItem  item="About Us"></MenuItem></Link>
+        <Link href="/home"><MenuItem setActive={setActive} active={active}item="Home"></MenuItem></Link>
+        <Link href="/premium"><MenuItem setActive={setActive} active={active}item="Premium"> </MenuItem></Link>
+        <Link href="/library"><MenuItem setActive={setActive}active={active} item="Library"></MenuItem></Link>
+        <Link href="/search"><MenuItem setActive={setActive} active={active}item="Search"></MenuItem></Link>
+        <Link href="/aboutus"><MenuItem setActive={setActive} active={active} item="About Us"></MenuItem></Link>
       </Menu>
     </div>
   );

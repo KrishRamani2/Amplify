@@ -9,6 +9,7 @@ export const ContainerScroll = ({
   titleComponent: string | React.ReactNode;
   children: React.ReactNode;
 }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const containerRef = useRef<any>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -54,6 +55,7 @@ export const ContainerScroll = ({
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Header = ({ translate, titleComponent }: any) => {
   return (
     <motion.div

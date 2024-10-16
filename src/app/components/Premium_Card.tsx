@@ -1,7 +1,26 @@
 import React from 'react';
 import { Check } from 'lucide-react';
+interface PlanCardProps {
+  title: string;
+  price: string;
+  duration: string;
+  monthlyPrice?: string;
+  features: string[];
+  buttonText: string;
+  terms?: string;
+  color: string;
+}
 
-const PlanCard = ({ title, price, duration, monthlyPrice, features, buttonText, terms, color }) => (
+const PlanCard: React.FC<PlanCardProps> = ({ 
+  title, 
+  price, 
+  duration, 
+  monthlyPrice, 
+  features, 
+  buttonText, 
+  terms, 
+  color 
+}) => (
   <div className="bg-gray-800 rounded-lg p-6 flex flex-col h-full">
     <h2 className={`text-2xl font-bold mb-2 ${color}`}>{title}</h2>
     <p className="text-white text-xl font-bold mb-1">₹{price} for {duration}</p>

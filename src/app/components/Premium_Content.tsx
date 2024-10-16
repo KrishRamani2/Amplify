@@ -1,7 +1,6 @@
 import React from 'react'
 import { BackgroundBeamsWithCollisionDemo } from './Premium_Banner'
 import PremiumPlans from './Premium_Card'
-import { CompareDemo } from './Compare'
 
 const Premium_Content = () => {
   return (

@@ -3,9 +3,7 @@ import React, { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/sidebar";
 import {
   IconArrowLeft,
-  IconBrandTabler,
   IconSettings,
-  IconUserBolt,
 } from "@tabler/icons-react";
 import { Tickets,Crown,Library,History,LayoutDashboard,Search } from 'lucide-react';
 import Link from "next/link";

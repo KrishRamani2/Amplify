@@ -1,6 +1,7 @@
 import React from 'react';
 import { Play, Plus, MoreHorizontal, Clock } from 'lucide-react';
 import Image1 from "../images/music.jpg"
+import Image from 'next/image';
 interface Song {
   id: number;
   title: string;
@@ -23,13 +24,13 @@ const SpotifyPlaylist: React.FC = () => {
   return (
     <div className="bg-gradient-to-b from-pink-700 to-black min-h-screen text-white p-8">
       <div className="flex items-end space-x-6 mb-6">
-        <img src={Image1} alt="Playlist cover" className="w-58 h-58 shadow-lg" />
+        <Image src={Image1} alt="Playlist cover" className="w-58 h-58 shadow-lg" />
         <div>
           <p className="uppercase text-sm font-bold">Playlist</p>
           <h1 className="text-8xl font-bold mb-6">Anuv Jain Mix</h1>
           <p className="text-sm text-gray-300">Aditya A, The Local Train and Aditya Rikhari</p>
           <p className="text-sm text-gray-300">
-            <img src={Image1} alt="Spotify logo" className="inline-block mr-1" />
+            <Image src={Image1} alt="Spotify logo" className="inline-block mr-1" />
             Spotify • 50 songs, about 2 hr 45 min
           </p>
         </div>
@@ -63,7 +64,7 @@ const SpotifyPlaylist: React.FC = () => {
               <td className="py-3">{song.id}</td>
               <td className="py-3">
                 <div className="flex items-center">
-                  <img src={Image1}   className="w-10 h-10 mr-3" />
+                  <Image src={Image1} alt=""  className="w-10 h-10 mr-3" />
                   <div>
                     <p className="font-medium">{song.title}</p>
                     <p className="text-sm text-gray-400">{song.artist}</p>
