@@ -11,7 +11,7 @@ import {
   IconEyeOff,
 } from "@tabler/icons-react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth"
-import { auth } from "/home/krish/Desktop/Amplify/src/firebase/config";
+import { auth } from "@/firebase/config";
 import { FirebaseError } from 'firebase/app';
 import { useRouter } from "next/navigation";
 
