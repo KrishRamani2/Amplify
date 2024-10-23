@@ -1,102 +1,94 @@
 "use client";
 import React from "react";
 import { HeroParallax } from "./ui/hero-parallax";
+import Image1 from "../images/Untitled.jpeg";
+import Image2 from "../images/sound2.jpeg";
+import Image3 from "../images/sound3.jpg";
+import Image4 from "../images/sound4.avif";
+import Image5 from "../images/sound5.jpg";
+import Image6 from "../images/sound6.jpeg";
+import Image7 from "../images/sound7.webp";
+import Image8 from "../images/sound8.jpg";
+import Image9 from "../images/sound9.webp";
 
 export function HeroParallaxDemo() {
   return <HeroParallax products={products} />;
 }
+
 export const products = [
   {
     title: "Moonbeam",
-    link: "https://gomoonbeam.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+    link: "/",
+    thumbnail: { src: Image2, alt: "Moonbeam Thumbnail" },
   },
   {
     title: "Cursor",
-    link: "https://cursor.so",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+    link: "/",
+    thumbnail: { src: Image3, alt: "Cursor Thumbnail" },
   },
   {
     title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+    link: "/",
+    thumbnail: { src: Image1, alt: "Rogue Thumbnail" },
   },
-
   {
     title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+    link: "/",
+    thumbnail: { src: Image5, alt: "Editorially Thumbnail" },
   },
   {
     title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+    link: "/",
+    thumbnail: { src: Image4, alt: "Editrix AI Thumbnail" },
   },
   {
     title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+    link: "/",
+    thumbnail: { src: Image7, alt: "Pixel Perfect Thumbnail" },
   },
-
   {
     title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+    link: "/",
+    thumbnail: { src: Image8, alt: "Algochurn Thumbnail" },
   },
   {
     title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+    link: "/",
+    thumbnail: { src: Image9, alt: "Aceternity UI Thumbnail" },
   },
   {
     title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+    link: "/",
+    thumbnail: { src: Image6, alt: "Tailwind Master Kit Thumbnail" },
   },
   {
     title: "SmartBridge",
-    link: "https://smartbridgetech.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+    link: "/",
+    thumbnail: { src: Image2, alt: "SmartBridge Thumbnail" },
   },
   {
     title: "Renderwork Studio",
-    link: "https://renderwork.studio",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+    link: "/",
+    thumbnail: { src: Image8, alt: "Renderwork Studio Thumbnail" },
   },
-
   {
     title: "Creme Digital",
-    link: "https://cremedigital.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+    link: "/",
+    thumbnail: { src: Image9, alt: "Creme Digital Thumbnail" },
   },
   {
     title: "Golden Bells Academy",
-    link: "https://goldenbellsacademy.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+    link: "",
+    thumbnail: { src: Image7, alt: "Golden Bells Academy Thumbnail" },
   },
   {
     title: "Invoker Labs",
-    link: "https://invoker.lol",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+    link: "",
+    thumbnail: { src: Image3, alt: "Invoker Labs Thumbnail" },
   },
   {
     title: "E Free Invoice",
-    link: "https://efreeinvoice.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+    link: "",
+    thumbnail: { src: Image1, alt: "E Free Invoice Thumbnail" },
   },
 ];

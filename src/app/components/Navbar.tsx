@@ -40,7 +40,7 @@ function Navbar({ className }: { className?: string }) {
           />
           <div className="flex items-center">
             <span className={cn(
-              "font-black text-xl bg-clip-text bg-gradient-to-r transition-all duration-300",
+              "font-black text-cxl bg-clip-text bg-gradient-to-r transition-all duration-300",
               isHovered 
                 ? "from-blue-500 via-purple-500 to-pink-500 text-transparent scale-105" 
                 : "from-gray-800 to-gray-900 text-gray-800",
@@ -84,10 +84,10 @@ function Navbar({ className }: { className?: string }) {
           <Menu setActive={setActive}>
             <MenuItem setActive={setActive} active={active} item="Account">
               <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="/web-dev">Login</HoveredLink>
-                <HoveredLink href="/interface-design">View Profile</HoveredLink>
-                <HoveredLink href="/seo">Listening history</HoveredLink>
-                <HoveredLink href="/branding">Settings and privacy</HoveredLink>
+                <HoveredLink href="/signin">Login</HoveredLink>
+                <HoveredLink href="/account">View Profile</HoveredLink>
+                <HoveredLink href="/history">Listening history</HoveredLink>
+                <HoveredLink href="/settings">Settings and privacy</HoveredLink>
               </div>
             </MenuItem>
             <Link href="/home">

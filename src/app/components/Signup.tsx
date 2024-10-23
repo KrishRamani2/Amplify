@@ -1,5 +1,5 @@
-"use client";
-import React from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "../../utils/cn";
@@ -7,55 +7,146 @@ import {
   IconBrandGithub,
   IconBrandGoogle,
   IconBrandOnlyfans,
+  IconEye,
+  IconEyeOff,
 } from "@tabler/icons-react";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth"
+import { auth } from "/home/krish/Desktop/Amplify/src/firebase/config";
+import { FirebaseError } from 'firebase/app';
+import { useRouter } from "next/navigation";
 
 export function SignupFormDemo() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [createUserWithEmailAndPassword, user, loading, userError] = useCreateUserWithEmailAndPassword(auth);
+  const router = useRouter();
+  const validateEmail = (email: string) => {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(String(email).toLowerCase());
   };
+
+  const validatePassword = (password: string) => {
+    return password.length >= 6;
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+
+    if (!email || !password) {
+      setError("Please enter both email and password.");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    if (!validatePassword(password)) {
+      setError("Password must be at least 6 characters long.");
+      return;
+    }
+
+    try {
+      const res = await createUserWithEmailAndPassword(email, password);
+      if (res) {
+        setEmail("");
+        setPassword("");
+        console.log("User signed up successfully:", res.user);
+        router.push("/signin");
+      } else {
+        setError("Failed to sign up. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error during sign up:", error);
+      if (error instanceof FirebaseError) {
+        switch (error.code) {
+          case 'auth/email-already-in-use':
+            setError("This email is already in use. Please try a different one.");
+            break;
+          case 'auth/invalid-email':
+            setError("Invalid email address. Please check and try again.");
+            break;
+          case 'auth/weak-password':
+            setError("Password is too weak. It should be at least 6 characters long.");
+            break;
+          default:
+            setError("An error occurred during sign up. Please try again.");
+        }
+      } else {
+        setError("An unexpected error occurred. Please try again later.");
+      }
+    }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-        Welcome to Smashify
+        Welcome to Brainwave
       </h2>
       <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-        Login to Smashify 
+        Sign up to Brainwave 
       </p>
 
       <form className="my-8" onSubmit={handleSubmit}>
-        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
-          <LabelInputContainer>
-            <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" />
-          </LabelInputContainer>
-          <LabelInputContainer>
-            <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Durden" type="text" />
-          </LabelInputContainer>
-        </div>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+          <Input 
+            id="email" 
+            placeholder="projectmayhem@fc.com" 
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="password">Password</Label>
-          <Input id="password" placeholder="••••••••" type="password" />
+          <div className="relative">
+            <Input 
+              id="password" 
+              placeholder="••••••••" 
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              minLength={6}
+            />
+            <button
+              type="button"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2"
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? (
+                <IconEyeOff className="h-4 w-4 text-neutral-500" />
+              ) : (
+                <IconEye className="h-4 w-4 text-neutral-500" />
+              )}
+            </button>
+          </div>
         </LabelInputContainer>
-        <LabelInputContainer className="mb-8">
-          <Label htmlFor="twitterpassword">Your twitter password</Label>
-          <Input
-            id="twitterpassword"
-            placeholder="••••••••"
-            type="twitterpassword"
-          />
-        </LabelInputContainer>
+        
+        {error && (
+          <p className="text-red-500 text-sm mb-4">{error}</p>
+        )}
+        
+        {userError && (
+          <p className="text-red-500 text-sm mb-4">{userError.message}</p>
+        )}
 
         <button
           className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-          type="submit"
+          type="submit" 
+          disabled={loading}
         >
-          Sign up &rarr;
+          {loading ? "Signing up..." : "Sign up →"}
           <BottomGradient />
         </button>
 
@@ -64,7 +155,7 @@ export function SignupFormDemo() {
         <div className="flex flex-col space-y-4">
           <button
             className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit"
+            type="button"
           >
             <IconBrandGithub className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
             <span className="text-neutral-700 dark:text-neutral-300 text-sm">
@@ -74,7 +165,7 @@ export function SignupFormDemo() {
           </button>
           <button
             className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit"
+            type="button"
           >
             <IconBrandGoogle className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
             <span className="text-neutral-700 dark:text-neutral-300 text-sm">
@@ -84,7 +175,7 @@ export function SignupFormDemo() {
           </button>
           <button
             className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit"
+            type="button"
           >
             <IconBrandOnlyfans className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
             <span className="text-neutral-700 dark:text-neutral-300 text-sm">

@@ -4,32 +4,85 @@ import React from "react";
 import { PinContainer } from "./ui/3d-pin";
 import Image from "next/image";
 import Arijit from "../images/Arijjit-Singh-Concert.jpeg";
+import artist from "../images/artist1.webp"
+import artist1 from "../images/artist2.webp"
+import artist2 from "../images/artist3.webp"
+import artist3 from "../images/artist4.webp"
+import artist4 from "../images/artist5.webp"
 
 export function AnimatedPinDemo() {
   const cardData = [
     {
       title: "Arijit Singh",
       href: Arijit,
-      description: "Customizable Tailwind CSS and Framer Motion Components.",
-      header: "UI",
+      description: "A popular Indian playback singer ",
+      header: "Arijit Singh",
     },
     {
-      title: "/another-example.com",
-      href: Arijit,
-      description: "Another customizable component library.",
-      header: "Example UI",
+      title: "Hariprasad Chaursia",
+      href: artist,
+      description: "A world renowned exponent of the bansuri",
+      header: "Hariprasad Chaursia",
     },
     {
-      title: "/more-examples.com",
-      href: Arijit,
-      description: "More customizable components for your projects.",
-      header: "More UI",
+      title: "Ravi Shankar",
+      href: artist1,
+      description: "A Legendary Sitar Player",
+      header: "Ravi Shankar",
     },
     {
-      title: "/more-examples.com",
+      title: "Shiv Kumar Sharma",
+      href: artist3,
+      description: "A popular Classical Musician",
+      header: "Shiv Kumar Sharma",
+    },
+    {
+      title: "Zakir Hussain",
+      href: artist2,
+      description: "A Classical Tabla Player",
+      header: "Zakir Hussain",
+    },
+    {
+      title: "Ustad Ali Akbar Khan",
+      href: artist4,
+      description: "Indian Classical Musicians",
+      header: "Ustad Ali Akbar Khan",
+    },
+    {
+      title: "Arijit Singh",
       href: Arijit,
-      description: "More customizable components for your projects.",
-      header: "More UI",
+      description: "A popular Indian playback singer ",
+      header: "Arijit Singh",
+    },
+    {
+      title: "Hariprasad Chaursia",
+      href: artist,
+      description: "A world renowned exponent of the bansuri",
+      header: "Hariprasad Chaursia",
+    },
+    {
+      title: "Ravi Shankar",
+      href: artist1,
+      description: "A Legendary Sitar Player",
+      header: "Ravi Shankar",
+    },
+    {
+      title: "Shiv Kumar Sharma",
+      href: artist3,
+      description: "A popular Classical Musician",
+      header: "Shiv Kumar Sharma",
+    },
+    {
+      title: "Zakir Hussain",
+      href: artist2,
+      description: "A Classical Tabla Player",
+      header: "Zakir Hussain",
+    },
+    {
+      title: "Ustad Ali Akbar Khan",
+      href: artist4,
+      description: "Indian Classical Musicians",
+      header: "Ustad Ali Akbar Khan",
     },
     // Add more card data as needed
   ];
