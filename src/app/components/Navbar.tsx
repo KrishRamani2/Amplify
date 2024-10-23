@@ -1,9 +1,9 @@
 "use client";
-
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
 import { cn } from "../../utils/cn";
 import Link from "next/link";
+import { AudioLines } from 'lucide-react';
 
 export function NavbarDemo() {
   return (
@@ -16,6 +16,7 @@ export function NavbarDemo() {
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
@@ -25,11 +26,40 @@ function Navbar({ className }: { className?: string }) {
       )}
     >
       <div className="flex items-center justify-between p-4 bg-white shadow-md rounded-lg">
-        <Link href="/home">
-          <span className="text-xl font-bold">Logo</span>
+        <Link 
+          href="/home" 
+          className="flex items-center group"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <AudioLines 
+            className={cn(
+              "w-16 h-8 transition-all duration-300 transform",
+              isHovered ? "text-blue-500 scale-110" : "text-gray-800"
+            )} 
+          />
+          <div className="flex items-center">
+            <span className={cn(
+              "font-black text-xl bg-clip-text bg-gradient-to-r transition-all duration-300",
+              isHovered 
+                ? "from-blue-500 via-purple-500 to-pink-500 text-transparent scale-105" 
+                : "from-gray-800 to-gray-900 text-gray-800",
+              "tracking-tight leading-none ml-1"
+            )}>
+              Smash
+            </span>
+            <span className={cn(
+              "font-black text-xl bg-clip-text bg-gradient-to-r transition-all duration-300",
+              isHovered 
+                ? "from-pink-500 via-purple-500 to-blue-500 text-transparent scale-105" 
+                : "from-gray-700 to-gray-800 text-gray-800",
+              "tracking-tight leading-none"
+            )}>
+              ify
+            </span>
+          </div>
         </Link>
-        
-        {/* Hamburger menu for small screens */}
+
         <button
           className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -50,7 +80,6 @@ function Navbar({ className }: { className?: string }) {
           </svg>
         </button>
 
-        {/* Menu for larger screens */}
         <div className="hidden md:block">
           <Menu setActive={setActive}>
             <MenuItem setActive={setActive} active={active} item="Account">
@@ -61,23 +90,42 @@ function Navbar({ className }: { className?: string }) {
                 <HoveredLink href="/branding">Settings and privacy</HoveredLink>
               </div>
             </MenuItem>
-            <Link href="/home"><MenuItem setActive={setActive} active={active} item="Home" /></Link>
-            <Link href="/premium"><MenuItem setActive={setActive} active={active} item="Premium" /></Link>
-            <Link href="/library"><MenuItem setActive={setActive} active={active} item="Library" /></Link>
-            <Link href="/search"><MenuItem setActive={setActive} active={active} item="Search" /></Link>
-            <Link href="/aboutus"><MenuItem setActive={setActive} active={active} item="About Us" /></Link>
+            <Link href="/home">
+              <MenuItem setActive={setActive} active={active} item="Home" />
+            </Link>
+            <Link href="/premium">
+              <MenuItem setActive={setActive} active={active} item="Premium" />
+            </Link>
+            <Link href="/library">
+              <MenuItem setActive={setActive} active={active} item="Library" />
+            </Link>
+            <Link href="/search">
+              <MenuItem setActive={setActive} active={active} item="Search" />
+            </Link>
+            <Link href="/aboutus">
+              <MenuItem setActive={setActive} active={active} item="About Us" />
+            </Link>
           </Menu>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden mt-2 bg-white shadow-md rounded-lg">
-          <Link href="/home"><div className="p-4 hover:bg-gray-100">Home</div></Link>
-          <Link href="/premium"><div className="p-4 hover:bg-gray-100">Premium</div></Link>
-          <Link href="/library"><div className="p-4 hover:bg-gray-100">Library</div></Link>
-          <Link href="/search"><div className="p-4 hover:bg-gray-100">Search</div></Link>
-          <Link href="/aboutus"><div className="p-4 hover:bg-gray-100">About Us</div></Link>
+          <Link href="/home">
+            <div className="p-4 hover:bg-gray-100">Home</div>
+          </Link>
+          <Link href="/premium">
+            <div className="p-4 hover:bg-gray-100">Premium</div>
+          </Link>
+          <Link href="/library">
+            <div className="p-4 hover:bg-gray-100">Library</div>
+          </Link>
+          <Link href="/search">
+            <div className="p-4 hover:bg-gray-100">Search</div>
+          </Link>
+          <Link href="/aboutus">
+            <div className="p-4 hover:bg-gray-100">About Us</div>
+          </Link>
           <div className="p-4 hover:bg-gray-100">
             <details>
               <summary>Account</summary>
@@ -94,3 +142,5 @@ function Navbar({ className }: { className?: string }) {
     </div>
   );
 }
+
+export default Navbar;
