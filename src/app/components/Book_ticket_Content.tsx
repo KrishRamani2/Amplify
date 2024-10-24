@@ -10,7 +10,7 @@ const Book_ticket_Content = () => {
         <CardDemo />
         <CardDemo />
         <CardDemo />
-        <CardDemo />
+        
       </div>
 
       <h1 className="text-2xl font-bold text-black mb-4 mt-5">Live Concerts</h1>
@@ -19,7 +19,7 @@ const Book_ticket_Content = () => {
         <CardDemo />
         <CardDemo />
         <CardDemo />
-        <CardDemo />
+        
       </div>
 
       <h1 className="text-2xl font-bold text-black mb-4 mt-5">World Tour</h1>
@@ -28,7 +28,7 @@ const Book_ticket_Content = () => {
         <CardDemo />
         <CardDemo />
         <CardDemo />
-        <CardDemo />
+        
       </div>
 
       <h1 className="text-2xl font-bold text-black mb-4 mt-5">Top Events</h1>
@@ -37,7 +37,7 @@ const Book_ticket_Content = () => {
         <CardDemo />
         <CardDemo />
         <CardDemo />
-        <CardDemo />
+        
       </div>
     </div>
   );
