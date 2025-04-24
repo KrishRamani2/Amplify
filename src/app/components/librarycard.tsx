@@ -227,7 +227,7 @@ const cards = [
     description: "Lana Del Rey",
     title: "Summertime Sadness",
     src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    audioSrc: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3", // Updated to local file
+    audioSrc: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", // Updated to local file
     ctaText: "Play",
     ctaLink: "/",
     content: () => (
