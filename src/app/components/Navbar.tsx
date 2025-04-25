@@ -46,7 +46,7 @@ function Navbar({ className }: { className?: string }) {
                 : "from-gray-800 to-gray-900 text-gray-800",
               "tracking-tight leading-none ml-1"
             )}>
-              Smash
+              Harmo
             </span>
             <span className={cn(
               "font-black text-xl bg-clip-text bg-gradient-to-r transition-all duration-300",
@@ -55,7 +55,7 @@ function Navbar({ className }: { className?: string }) {
                 : "from-gray-700 to-gray-800 text-gray-800",
               "tracking-tight leading-none"
             )}>
-              ify
+              niq
             </span>
           </div>
         </Link>
