@@ -8,9 +8,9 @@ import { getAuth } from "firebase/auth";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBFt52SakKOq06BOhx1Z7dM0FIpr9R41Ck",
-  authDomain: "smashify-e397c.firebaseapp.com",
-  projectId: "smashify-e397c",
-  storageBucket: "smashify-e397c.appspot.com",
+  authDomain: "Harmoniq-e397c.firebaseapp.com",
+  projectId: "Harmoniq-e397c",
+  storageBucket: "Harmoniq-e397c.appspot.com",
   messagingSenderId: "250307839346",
   appId: "1:250307839346:web:00734d6efe9e1d0decc9eb",
   measurementId: "G-GN0TZTET20"

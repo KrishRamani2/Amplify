@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <h3 className="text-2xl font-bold mb-2">Smashify</h3>
+            <h3 className="text-2xl font-bold mb-2">Harmoniq</h3>
             <p className="text-sm opacity-70">Your rhythm, your way</p>
           </div>
           <div className="flex space-x-4">
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="mt-6 text-center text-sm opacity-50">
-          © 2024 Smashify. All rights reserved.
+          © 2024 Harmoniq. All rights reserved.
           @Ramani Technology
         </div>
       </div>
