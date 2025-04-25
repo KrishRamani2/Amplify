@@ -95,7 +95,7 @@ export function SidebarSearch() {
           <div>
             <SidebarLink
               link={{
-                label: "Ramani",
+                label: "Harmoniq",
                 href: "/account",
                 icon: (
                   <Image

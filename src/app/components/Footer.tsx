@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="mt-6 text-center text-sm opacity-50">
           © 2024 Harmoniq. All rights reserved.
-          @Ramani Technology
+          @Harmoniq Technology
         </div>
       </div>
       <div className="absolute inset-0 opacity-10 overflow-hidden pointer-events-none">

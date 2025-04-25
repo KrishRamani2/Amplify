@@ -94,7 +94,7 @@ export function SidebarPremium() {
           <div>
             <SidebarLink
               link={{
-                label: "Ramani",
+                label: "Harmoniq",
                 href: "/account",
                 icon: (
                   <Image
