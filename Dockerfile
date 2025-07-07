@@ -26,6 +26,6 @@ COPY --from=deps /app/.next ./.next
 COPY --from=deps /app/package.json ./package.json
 COPY --from=deps /app/node_modules ./node_modules
 
-EXPOSE 3000
+EXPOSE 8000
 
 CMD ["npm", "start"]
